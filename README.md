@@ -34,15 +34,38 @@ Eight AI skills cover different remediation cases and audiences. Use the general
 - Retest the exposure after the fix, including normal restart, rebuild, and redeployment paths when relevant.
 - Let security provide evidence and options while the accountable owner makes the business decision.
 
-## Installation
+## Install in Codex
 
-Each folder is a standalone skill containing a `SKILL.md` file.
+The easiest option is to paste this into Codex:
 
-1. Download or clone this repository.
-2. Copy the skill folders you want into the skills directory supported by your AI coding agent.
-3. Start a new session so the agent reloads its available skills.
+```text
+Use $skill-installer to install all eight skills from
+https://github.com/mikhsanfbusiness-alt/Remediate-Everything.
 
-Common personal skill locations include:
+Install these paths:
+- remediate-everything
+- validate-vulnerability-exposure
+- prioritize-vulnerability-remediation
+- pitch-vulnerability-remediation
+- plan-vulnerability-remediation
+- govern-vulnerability-risk
+- accept-vulnerability-risk
+- verify-remediation-closure
+```
+
+Codex installs the skills in `$CODEX_HOME/skills/`, or `~/.codex/skills/` when `CODEX_HOME` is not set. Send a new message after installation so Codex reloads its available skills.
+
+To verify the setup, try:
+
+```text
+Use $remediate-everything to route a vulnerability finding from validation through verified closure. Tell me which specialist skill should handle each stage.
+```
+
+Codex can discover a relevant skill automatically from your request, but explicit `$skill-name` invocation is useful when you want predictable routing.
+
+## Manual Installation
+
+Each folder is a standalone skill containing a `SKILL.md` file. Download or clone the repository, then copy the eight skill folders into one of these locations:
 
 - Codex: `$CODEX_HOME/skills/` or `~/.codex/skills/`
 - Cross-runtime agents: `~/.agents/skills/`
@@ -96,7 +119,7 @@ Use $verify-remediation-closure to confirm the fix survived a restart and the ne
 
 These skills organize evidence, decisions, remediation work, and verification. They do not replace authorized scanning, technical testing, company policy, legal advice, or an accountable risk owner. They do not justify unsupported exploitation claims or indefinite exceptions.
 
-Outputs are only as reliable as the evidence provided. Review generated decisions before using them in production, audit, regulatory, or executive contexts.
+Review every generated decision against the source evidence before using it in production, audit, regulatory, or executive contexts.
 
 ## Why I Made This
 
